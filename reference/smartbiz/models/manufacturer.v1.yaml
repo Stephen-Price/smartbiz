@@ -1,7 +1,7 @@
 title: Manufacturer
 type: object
 x-tags:
-  - jobs
+  - manufacturers
 description: Manufacturer of a product.
 properties:
   manufacturer_id:
