@@ -29,7 +29,7 @@ paths:
         required: true
         description: contains products
     get:
-      summary: Products
+      summary: Get Products
       tags:
         - Products
       responses:
