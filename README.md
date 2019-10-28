@@ -14,9 +14,7 @@ SmartBiz the online storefront that will disrupt e-commerce.
 > A valid SmartBiz API Key is needed to make requests to this API.
 
 * * *
-
-<!-- theme: info -->
-># Endpoints
+# Endpoints
 
 ## _Jobs_
 
@@ -39,8 +37,7 @@ Interacts with the SmartBiz cloud service to manage products on the e-commerce s
 - update_job
 - delete_job
 
-<!-- theme: info -->
-># Schema
+# Schema
 
 <!--
 type: tab
@@ -159,9 +156,7 @@ properties:
 <!-- type: tab-end -->
 
 * * *
-
-<!-- theme: info -->
->## Samples
+# Samples
 
 How to interact with the Products endpoint.
 
