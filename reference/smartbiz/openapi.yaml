@@ -1,8 +1,8 @@
 openapi: 3.0.0
 info:
-  title: SmartBiz
+  title: SmartProducts
   version: '1.0'
-  description: "Returns data about SmartBiz's products on the e-commerce site and mobile applications."
+  description: Interacts with the SmartBiz cloud service to manage products on the e-commerce site and mobile applications.
   contact:
     name: Stephen Price
     email: sprice@stoplight.io

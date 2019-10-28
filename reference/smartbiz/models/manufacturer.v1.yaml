@@ -1,12 +1,12 @@
-title: Department
+title: Manufacturer
 type: object
 x-tags:
   - jobs
-description: Department for the job post.
+description: Manufacturer of a product.
 properties:
-  department_id:
+  manufacturer_id:
     type: integer
-  department_name:
+  manufacturer_name:
     type: string
   created_at:
     type: string
