@@ -57,7 +57,7 @@ paths:
             exclusiveMaximum: false
           in: query
           name: limit
-          description: 'limit on the number of products returned by request (max: 100)'
+          description: 'number of products returned (max: 100)'
     post:
       summary: New Product
       tags:
@@ -80,6 +80,13 @@ paths:
         description: 'Input fields for loading a product to the storefront, the published and in stock boleans are required parameters.'
       security:
         - API Key - 1: []
+      parameters:
+        - schema:
+            type: integer
+            maximum: 1
+          in: query
+          description: One new product per call
+          name: limit
     put:
       summary: Update Product
       tags:
@@ -103,6 +110,13 @@ paths:
         description: 'Input fields for updating a product to the storefront, the published and in stock boleans are required parameters.'
       security:
         - API Key - 1: []
+      parameters:
+        - schema:
+            type: integer
+            maximum: 1
+          in: query
+          name: limit
+          description: One update per call
     delete:
       summary: Remove Product
       tags:
@@ -122,6 +136,13 @@ paths:
       operationId: delete_product
       security:
         - API Key - 1: []
+      parameters:
+        - schema:
+            type: integer
+            maximum: 1
+          in: query
+          name: limit
+          description: 1 deletion per call
 components:
   schemas: {}
   securitySchemes:
