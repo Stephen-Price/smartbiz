@@ -1,0 +1,20 @@
+title: Category
+type: object
+x-tags:
+  - Products
+description: Categories to organize products displayed on the storefront.
+properties:
+  category id:
+    type: integer
+    format: int64
+  category_name:
+    type: string
+  created_at:
+    type: string
+    format: date-time
+  last_update:
+    type: string
+    format: date-time
+required:
+  - category id
+  - category_name

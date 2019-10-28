@@ -1,0 +1,132 @@
+openapi: 3.0.0
+info:
+  title: SmartBiz
+  version: '1.0'
+  description: "Returns data about SmartBiz's products on the e-commerce site and mobile applications."
+  contact:
+    name: Stephen Price
+    email: sprice@stoplight.io
+    url: 'https://www.linkedin.com/in/slprice/'
+  termsOfService: smartbiz.com/terms
+  license:
+    name: MIT
+    url: 'https://opensource.org/licenses/MIT'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  '/products/{api key}/{category}':
+    parameters:
+      - schema:
+          type: integer
+        name: api key
+        in: path
+        required: true
+        description: unique user api key mapped to a company account
+      - schema:
+          type: string
+        name: category
+        in: path
+        required: true
+        description: contains products
+    get:
+      summary: Products
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ./models/products.v1.yaml
+          headers: {}
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      description: Returns products within a category and corresponding metadata.
+      operationId: get_product
+      security:
+        - API Key - 1: []
+      parameters:
+        - schema:
+            type: integer
+            maximum: 100
+            exclusiveMaximum: false
+          in: query
+          name: limit
+          description: 'limit on the number of products returned by request (max: 100)'
+    post:
+      summary: New Product
+      tags:
+        - Products
+      responses:
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal Server Error
+      description: Add a new product to the database to display on the storefront.
+      operationId: post_product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/products.v1.yaml
+            examples: {}
+        description: 'Input fields for loading a product to the storefront, the published and in stock boleans are required parameters.'
+      security:
+        - API Key - 1: []
+    put:
+      summary: Update Product
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      description: Update a product entry to display new information on the storefront.
+      operationId: update_product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: ./models/products.v1.yaml
+        description: 'Input fields for updating a product to the storefront, the published and in stock boleans are required parameters.'
+      security:
+        - API Key - 1: []
+    delete:
+      summary: Remove Product
+      tags:
+        - Products
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Internal Server Error
+      description: Remove a product from the storefront.
+      operationId: delete_product
+      security:
+        - API Key - 1: []
+components:
+  schemas: {}
+  securitySchemes:
+    API Key - 1:
+      name: API Key
+      type: apiKey
+      in: query
+      description: ''

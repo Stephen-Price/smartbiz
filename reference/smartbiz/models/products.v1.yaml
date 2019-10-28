@@ -1,0 +1,58 @@
+title: Products
+x-tags:
+  - Products
+type: object
+description: Products to be displayed on the storefront.
+x-examples: {}
+properties:
+  products:
+    type: array
+    items:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          format: int64
+        product_name:
+          type: string
+        in_stock:
+          type: boolean
+        price:
+          type: number
+          format: float
+        published:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+        last_update:
+          type: string
+          format: date-time
+        views:
+          type: integer
+        purchases:
+          type: integer
+        returns:
+          type: integer
+      required:
+        - product_id
+        - product_name
+        - in_stock
+        - price
+        - published
+  category:
+    type: object
+    properties:
+      category id:
+        type: integer
+        format: int64
+      category:
+        $ref: ./category.v1.yaml
+  manufacturer:
+    type: object
+    properties:
+      manufacturer id:
+        type: integer
+        format: int64
+      'manufacturer ':
+        $ref: ./manufacturer.v1.yaml

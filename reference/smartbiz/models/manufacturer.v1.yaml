@@ -1,0 +1,16 @@
+title: Department
+type: object
+x-tags:
+  - jobs
+description: Department for the job post.
+properties:
+  department_id:
+    type: integer
+  department_name:
+    type: string
+  created_at:
+    type: string
+    format: date-time
+  updated_at:
+    type: string
+    format: date-time
