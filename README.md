@@ -7,6 +7,12 @@ SmartBiz the online storefront that will disrupt e-commerce.
 1.  Interact with the SmartBiz cloudservice to manage your online storefront.
 2.  Get, Create, Update, and Delete product information to be displayed for your account.
 
+Do you want to transform your business and bring your products to a worldwide digital market? Then the **SmartProducts API** is for you! Integrate our Storefront e-commerce platform with your own inventory management solution and manage thousands of products at scale. 
+
+At **SmartBiz** we believe in arming small businesses with the tools they need in an increasingly digital and competitive marketplace. We make our APIs simple, easy to use and understand and we make a lot of them! *Leverage the power of our cloud service to develop the solutions you need to succeed.*
+
+This API lets you add, delete, update and view products on the Storefront with additional features such as stock and pricing management. 
+
 <!-- theme: warning -->
 
 > ### **Authentication**
@@ -16,7 +22,7 @@ SmartBiz the online storefront that will disrupt e-commerce.
 * * *
 # Endpoints
 
-## _Jobs_
+## _Products_
 
 ### Path
 
@@ -32,10 +38,10 @@ Interacts with the SmartBiz cloud service to manage products on the e-commerce s
 -   Product Category
 
 ### Operations
-- get_jobs
-- new_job
-- update_job
-- delete_job
+- get_product
+- create_product
+- update_product
+- delete_product
 
 # Schema
 
@@ -167,11 +173,12 @@ title: New Product
 
 ```javascript
 function new_product(limit){
-  var id, name, stock, pub;
+  var id = product_id; 
+  var name = product_name;
+  var stock = in_stock;
+  var new_product;
 
-  for (id = 0; i < id.length; i++) {
-    return product_id, product_name, in_stock;
-  }
+  new_product = product.create(id, name, stock);
 }
 ```
 
@@ -185,7 +192,7 @@ function delete_product(limit){
   var id, name, stock, pub;
 
   for (id = 0; i < id.length; i++) {
-    product.delete;
+    product.delete();
   }
 }
 ```

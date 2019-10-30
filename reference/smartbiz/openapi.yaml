@@ -70,7 +70,7 @@ paths:
         '500':
           description: Internal Server Error
       description: Add a new product to the database to display on the storefront.
-      operationId: post_product
+      operationId: create_product
       requestBody:
         content:
           application/json:
