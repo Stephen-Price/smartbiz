@@ -22,6 +22,7 @@ properties:
           format: float
         published:
           type: boolean
+          description: allowed for display
         created_at:
           type: string
           format: date-time
